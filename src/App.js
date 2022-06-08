@@ -3,7 +3,6 @@ import './App.css';
 import Footer from './Components/Footer';
 import NavBar from './Components/NavBar';
 import login from './LoginPage/login';
-import SignUp from './SignUpPage/SignUp';
 import Home from './Home/Home';
 import Register from './Registration/Register';
 import bgImage from './Video/Background-img.mp4';
@@ -24,7 +23,6 @@ const App = () => {
   return (
      <>
        <NavBar/>
-       
        <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/Contact" element={<About />}/>

@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function Login() {
+  const [email,setEmail]=useState('');
+  const [password,setPassword]=useState('');
+
+  const onLogin=()=>{
+
+  }
     return (
         
         <>
@@ -15,8 +21,8 @@ export default function Login() {
             <form className="needs-validation row g-3" novalidate>
   
   <div className="col-md-8">
-    <label for="inputEmail" className="form-label"><strong>Email</strong></label>
-    <input type="email" className="form-control" placeholder="Enter Email" name="email" id="inputEmail" required/>
+    <label for="inputEmail"  className="form-label"><strong>Email</strong></label>
+    <input id="email" type="email" value={email}onChange={(e)=>console.log(e.target)} className="form-control" placeholder="Enter Email" name="email" id="inputEmail" required/>
   </div>
   
   <div className="col-md-8">
