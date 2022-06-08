@@ -22,7 +22,7 @@ export default function Login() {
   
   <div className="col-md-8">
     <label for="inputEmail"  className="form-label"><strong>Email</strong></label>
-    <input id="email" type="email" value={email}onChange={(e)=>console.log(e.target)} className="form-control" placeholder="Enter Email" name="email" id="inputEmail" required/>
+    <input id="email" type="email"  className="form-control" placeholder="Enter Email" name="email" id="inputEmail" required/>
   </div>
   
   <div className="col-md-8">
