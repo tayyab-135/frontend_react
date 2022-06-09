@@ -1,4 +1,6 @@
-import React from 'react'
+import React,{Component} from 'react'
+import { Link } from 'react-router-dom'
+import Card from './Cards'
 
 export default function StudentDashboard() {
     return (
@@ -9,25 +11,20 @@ export default function StudentDashboard() {
         
          <div className="row">
 
-<div className="col-6 col-md-4"><input type="text" className="form-control" placeholder="Living Area" name="phone" id="inputNumber" required/></div>
 
-<div className="col-6 col-md-4"><input type="text" className="form-control" placeholder="Qualification" name="name" id="inputName" required/></div>
+<div className="col-6 col-md-8"><input type="text" className="form-control" placeholder="Search by Location/Qualification" name="name" id="inputName" required/></div>
 
 <div className="col-6 col-md-4"><button type="submit" className="btn btn-info">Seacrch</button></div>
 </div><hr/><br/><br/>
     
         </div>
 
-       <div className='container my-5'>
-        <div className="row">
-
-  <div className="col-6 col-md-4">
-  </div>
- 
-  <div className="col-6 col-md-4"><input type="text" className="form-control" placeholder="Qualification" name="name" id="inputName" required/></div>
-
-  <div className="col-6 col-md-4"><button type="submit" className="btn btn-info">Seacrch</button></div>
-</div><hr/><br/><br/>
+       <div className='container-fluid d-flex justify-content-center my-5'>
+       <div className='row'>
+           <div className='col-md-4'><Card/></div>
+           <div className='col-md-4'><Card/></div>
+           <div className='col-md-4'><Card/></div>
+       </div>
        </div>
 
   
