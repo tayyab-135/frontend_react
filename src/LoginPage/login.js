@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useAlert } from "react-alert";
+import { LOGIN_API } from "../constants/network";
+import { Link } from 'react-router-dom'
 import { validateEmail } from "../utils/validators";
 
 export default function Login() {
@@ -9,7 +11,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onLogin = (e) => {
+  const onLogin = async(e) => {
     e.preventDefault();
 
     if (!email || !password)
@@ -18,36 +20,40 @@ export default function Login() {
       alert.error("invalid email!");
     }
     if (password.length < 8) {
-      alert.error("password must be greator than 8 characters");
+     return alert.error("password must be greator than 8 characters");
     }
+
+    await axios.post('http://127.0.0.1:8000/LoginUser',
+      
+      {
+        email:email,
+        password:password
+      }).then((res)=>{
+        console.log("dd",res)
+      })
+    .catch((err)=>console.log("err",err))
+
   };
+
   return (
     <>
-      <div className="container my-3">
-        <div>
-          <center>
-            <img
-              my-5
-              src="login.png"
-              className="animated bounce infinite my-4"
-              id="animated-img1"
-              width="50%"
-              alt="..."
-            />
-          </center>
-        </div>
-      </div>
-      <div className="container">
+
+        <div class="b-example-divider"></div>
+        
+        <div class="container col-xxl-8 px-4 py-5 my-4 ">
         <center>
-          <h1>
+          <h4>
             <i>Welcome, Login Here</i>
-          </h1>
+          </h4>
         </center>
-        <hr />
-        <br />
-        <br />
-        <form className="needs-validation row g-3" novalidate>
-          <div className="col-md-8">
+        <hr/>
+          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6 my-5">
+              <img src="login.png" class=" animated bounce infinite d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="400" height="300" loading="lazy" />
+            </div>
+            <div class="col-lg-6">
+            <form className="needs-validation row g-3 my-2" novalidate>
+          <div className="col-md-12 ">
             <label for="inputEmail" className="form-label">
               <strong>Email</strong>
             </label>
@@ -62,30 +68,28 @@ export default function Login() {
             />
           </div>
 
-          <div className="col-md-8">
+          <div className="col-md-12">
             <label for="inputCity" className="form-label">
               <strong>Password</strong>
             </label>
             <input
               value={password}
               type="password"
+              placeholder="Enter Password"
               className="form-control"
               onChange={(evt) => setPassword(evt.target.value)}
               id="inputCity"
               required
             />
           </div>
-          <div className="col-12 my-4">
-            <button
-              onClick={(e) => onLogin(e)}
-              // type="submit"
-              className="btn btn-info"
-            >
-              Login
-            </button>
-          </div>
         </form>
-      </div>
+              
+                <div className="col-md-12 my-3">
+    <button onClick={(e) => onLogin(e)} type="button" className="btn btn-info">Login</button>
+  </div>
+              </div>
+            </div>
+          </div>
     </>
   );
 }

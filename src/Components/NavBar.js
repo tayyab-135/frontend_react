@@ -24,9 +24,7 @@ export default function NavBar ()  {
       <li className="nav-item">
        <Link className="nav-link" to="/Contact">Contact Us</Link>
       </li>
-      <li className="nav-item">
-       <Link className="nav-link" to="StudentDashboard">Notes</Link>
-      </li>
+
       <li className="nav-item">
        <Link className="nav-link" to="Registration">Register</Link>
 
