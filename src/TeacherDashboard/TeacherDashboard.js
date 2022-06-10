@@ -51,7 +51,7 @@ export default function TeacherDashboard() {
       <td>03099115958</td>
       <td>DHA</td>
       <td>BBA</td>
-      <td><spam><button type="button" class="btn btn-info">Accept</button><button type="button" class="btn btn-danger mx-2">Reject</button></spam></td>
+      <td><spam><Link to="/" className="btn btn-info">Accept</Link><Link to="/" className="btn btn-danger mx-2">Reject</Link></spam></td>
     </tr>
   </tbody>
 </table>

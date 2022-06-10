@@ -7,7 +7,7 @@ export default function StudentDashboard() {
         
         <>
 <div className="container my-3">
-         <div><center><img my-5 src="stu.png" className="animated bounce infinite my-4" id="animated-img1" width="30%" alt="..."/></center></div>
+         <div className='my-4'><center><img my-5 src="stu.png" className="animated bounce infinite my-4" id="animated-img1" width="30%" alt="..."/></center></div>
         
          <div className="row">
 <center>
